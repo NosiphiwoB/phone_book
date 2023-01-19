@@ -7,13 +7,12 @@ import { useEffect, useState } from 'react';
 const Main = () => {
    let navigate = useNavigate()
    const [form, setForm] = useState({
-    partyname:"",
-    startdate:"",
-    leader:"",
-    members:""
+    contact_number:"",
+    contact_name:"",
+    contact_email:""
    })
 
-   const [card, setCard] = useState([]);
+   const [list, setList] = useState([]);
    useEffect(() => {
     getDetails();
    }, []);
@@ -27,23 +26,22 @@ const Main = () => {
 
    const handleSubmit = async (e) => {
    e.preventDefault();
-   if(form.partyname === "" || form.startdate === "" || form.leader === "" || form.members === "") {
+   if(form.contact_number === "" || form.contact_name === "" || form.contact_email === "" ) {
     return  alert ("Fill all the inputs")
    }else{
     try{
-      const saveDetails = await axios.post(
-        "http://localhost:3005/save_details",
+      const saveContacts = await axios.post(
+        "http://localhost:5000/save_contact",
           form,
       );
       getDetails();
       navigate('/display')
       setForm({
-        partyname: "",
-        startdate: "",
-        leader: "",
-        members: ""
-      })
-      return saveDetails;
+        contact_number: "",
+        contact_name: "",
+        contact_email: ""
+            })
+      return saveContacts;
       
     } catch (error) {
       console.log("error", error);
@@ -53,56 +51,35 @@ const Main = () => {
   };
   const getDetails = async () => {
     await axios
-      .get("http://localhost:3005/get_details")
+      .get("http://localhost:5000/get_contacts")
       .then((response) => {
         const data = response.data;
-        setCard(data);
+        setList(data);
       })
       .catch(() => {
       });
     };
 
-    const deleteParty = async (id) => {
+    const deleteContact = async (id) => {
       console.log('id', id)
-      let res = await axios.delete(`http://localhost:3005/delete_party/${id}`);
+      let res = await axios.delete(`http://localhost:5000/delete_contact/${id}`);
+      getDetails();
+      return res.data
+     }  
+
+     const editContact = async (id) => {
+      console.log('id', id)
+      let res = await axios.edit(`http://localhost:5000/update_contact/${id}`);
       getDetails();
       return res.data
      }
-
-
-    const increment = async(id, data) => {
-
-      let value = Number(data);
-      value++;
-      let res = await axios.put(`http://localhost:3005/increment/${id}`, {members: value.toString()}).then(res=>{
-        getDetails();
-      }).catch(error=> console.log(error));
-      
-      return res
-
-    };
-
-
-    const decrement = async(id, data) => {
-
-      let value = Number(data);
-      value--;
-      let res = await axios.put(`http://localhost:3005/decrement/${id}`, {members: value.toString()}).then(res=>{
-        getDetails();
-      }).catch(error=> console.log(error));
-      
-      return res
-
-    };
-
-  
 
   return (
 
     <div>
       <Routes>
         <Route path="/" exact  element={<Form handleChange={handleChange} handleSubmit={handleSubmit}/>}/>
-        <Route path="/display" element={<Display card={card} getDetails={getDetails} deleteParty={deleteParty} increment={increment} decrement={decrement}/>} />
+        <Route path="/display" element={<Display list={list} getDetails={getDetails} deleteContact={deleteContact} editContact={editContact}/>} />
       </Routes>
     </div>
 

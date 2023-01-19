@@ -1,5 +1,5 @@
 const contactsSchema = require('../models/contactsSchema')
-const postSchema = require('../models/contactsSchema')
+// const postSchema = require('../models/contactsSchema')
 
 const saveContacts = (app) => {
   
@@ -40,19 +40,19 @@ const saveContacts = (app) => {
         }
     })
 app.put('/update_contact/:id', async (req, res) =>{
-
-    const {id} = req.params
-    const contact = req.body
-
-    try {
-        const contacts = await contactsSchema.findByIdAndUpdate({_id : id , contact} );
-        res.status(200).send({message: `Updated` , data : contact})  
-    } catch (error) {
-
-        console.log(error)
-        res.status(501)
         
-    }
+        const {contact_number , contact_name, contact_email } = req.body
+        const {id } = req.params
+         const contactInfo = req.body
+        try{
+
+            await contactsSchema.findByIdAndUpdate({_id : id }, {contact_number : contact_number , contact_name : contact_name , contact_email : contact_email});
+            res.status(200).send({massage: `Updated`, data: contactInfo})
+        }catch (error){
+         console.log(error)
+            res.sendStatus(200)
+        }
+
 
 })
 

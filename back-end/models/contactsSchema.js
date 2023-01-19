@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const postSchema = mongoose.Schema({
+const contactsSchema = mongoose.Schema({
     contact_number: {
         type: String,
         require: true
@@ -16,4 +16,4 @@ const postSchema = mongoose.Schema({
     }
 )
 
-module.exports = mongoose.model('post', postSchema)
+module.exports = mongoose.model('post', contactsSchema)

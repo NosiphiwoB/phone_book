@@ -1,54 +1,46 @@
 import Navbar from "./Navbar";
 
 const Form = (props) => {
-  const {handleChange, handleSubmit, partyname, startdate, leader, members} = props;
+  const {handleChange, handleSubmit, contact_number, contact_name, contact_email} = props;
     return(
         <div>
             <Navbar/>
 
        <div>
-        <h1>Add Party</h1>        
+        <h1>Add Contact</h1>        
        </div>
 
        <form id="form" onSubmit={handleSubmit}>
-         <div>
-           <label>Party Name</label>
-           <input
-            onChange={handleChange}
-            name="partyname"
-            value={partyname}
-           />
-         </div>
 
-         <div className="dateInput">
-          <label>Start Date</label>
-          <input type="date"
+         <div>
+          <label>Contact Number</label>
+          <input 
            onChange={handleChange}
-           name="startdate"
-           value={startdate}
+           name="contact_number"
+           value={contact_number}
           />
          </div>
 
         <div>
-          <label>Leader</label>
+          <label>Contact Name</label>
           <input 
           onChange={handleChange}
-          name="leader"
-          value={leader}
+          name="contact_name"
+          value={contact_name}
           />
         </div>
 
         <div>
-         <label>Members</label>
-         <input type="number"
+         <label>Contact Email</label>
+         <input 
          onChange={handleChange}
-         name="members"
-         value={members}
+         name="contact_email"
+         value={contact_email}
          />
         </div>
 
         <div>
-         <button type="submit">Submit</button>
+         <button type="submit">Save</button>
         </div>
 
 

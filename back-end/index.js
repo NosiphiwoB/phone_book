@@ -22,4 +22,4 @@ mongoose.connect(
   saveContacts(app)
 
 
-app.listen(port, () => console.log(`App listening`))
+app.listen(port, () => console.log(`App listening ${port}`))
