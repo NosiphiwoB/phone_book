@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+
+#list {
+  width: 70%;
+  margin: auto;
+  padding-top: 5%;
+  padding-left: 35%;
+  width: 70%;
+    margin: auto;
+}
+
+  
+
+button {
+  border-radius: 8px;
+}
+
+#form {
+  display:flex;
+  /* background-color: #874356a6; */
+    font-size: 50px;
+    /* border-radius: 25px;box-shadow: 0 -7px 18px rgb(0, 0, 0) */
+}
+
+#save {
+  font-size: 28px;
+  padding-top: 5%;
+}
+
+h1 {
+  font-size: 50px;
+}

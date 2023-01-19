@@ -67,19 +67,18 @@ const Main = () => {
       return res.data
      }  
 
-     const editContact = async (id) => {
-      console.log('id', id)
-      let res = await axios.edit(`http://localhost:5000/update_contact/${id}`);
-      getDetails();
-      return res.data
-     }
+    //  const editContact = async (e) => {
+    // //   e.preventDefault();
+    // //   let res = await axios.put(`http://localhost:5000/update_contact/${contactEdit.id}`, guestEdit);
+    // //  return res.data
+    //  }
 
   return (
 
     <div>
       <Routes>
         <Route path="/" exact  element={<Form handleChange={handleChange} handleSubmit={handleSubmit}/>}/>
-        <Route path="/display" element={<Display list={list} getDetails={getDetails} deleteContact={deleteContact} editContact={editContact}/>} />
+        <Route path="/display" element={<Display list={list} getDetails={getDetails} deleteContact={deleteContact} />} />
       </Routes>
     </div>
 

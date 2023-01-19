@@ -42,7 +42,7 @@ const saveContacts = (app) => {
 app.put('/update_contact/:id', async (req, res) =>{
         
         const {contact_number , contact_name, contact_email } = req.body
-        const {id } = req.params
+         const {id } = req.params
          const contactInfo = req.body
         try{
 

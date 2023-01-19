@@ -10,8 +10,8 @@ const Form = (props) => {
         <h1>Add Contact</h1>        
        </div>
 
-       <form id="form" onSubmit={handleSubmit}>
-
+       <form onSubmit={handleSubmit}>
+        <div id="form">
          <div>
           <label>Contact Number</label>
           <input 
@@ -38,14 +38,14 @@ const Form = (props) => {
          value={contact_email}
          />
         </div>
-
-        <div>
-         <button type="submit">Save</button>
+        </div>
+       <div id="save">
+         <button type="submit" >Save</button>
         </div>
 
-
-
+        
        </form>
+
 
 
         </div>
