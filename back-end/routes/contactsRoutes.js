@@ -1,5 +1,4 @@
 const contactsSchema = require('../models/contactsSchema')
-// const postSchema = require('../models/contactsSchema')
 
 const saveContacts = (app) => {
   
