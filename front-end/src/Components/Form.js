@@ -1,6 +1,8 @@
 import Navbar from "./Navbar";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form'
 
-const Form = (props) => {
+const form = (props) => {
   const {handleChange, handleSubmit, contact_number, contact_name, contact_email} = props;
     return(
         <div>
@@ -60,4 +62,4 @@ const Form = (props) => {
     )
 }
 
-export default Form
+export default form
