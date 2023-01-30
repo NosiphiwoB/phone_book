@@ -14,7 +14,8 @@ const Form = (props) => {
         <div id="form">
          <div>
           <label>Contact Number</label>
-          <input 
+          <input className="input"
+          placeholder="Your Number"
            onChange={handleChange}
            name="contact_number"
            value={contact_number}
@@ -23,7 +24,8 @@ const Form = (props) => {
 
         <div>
           <label>Contact Name</label>
-          <input 
+          <input className="input"
+          placeholder="Your Name"
           onChange={handleChange}
           name="contact_name"
           value={contact_name}
@@ -32,15 +34,19 @@ const Form = (props) => {
 
         <div>
          <label>Contact Email</label>
-         <input 
+         <input className="input"
+         placeholder="Your Email"
          onChange={handleChange}
          name="contact_email"
          value={contact_email}
          />
         </div>
         </div>
-       <div id="save">
-         <button type="submit" >Save</button>
+       <div >
+         <button type="submit" id="save">Save Details</button>
+        </div>
+        <div>
+          <button id="cancel">cancel</button>
         </div>
 
         

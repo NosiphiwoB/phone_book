@@ -4,12 +4,27 @@ import Navbar from "./Navbar";
 const Display = (props) =>{
     const {list, deleteContact, editContact} = props
     return(
-        <div>
+        <div id="display">
             <Navbar/>
 
+
+            <thead>
+                <tr>
+                <th>Number</th>
+              <th>Name</th>
+              <th>Email</th>
+               </tr>             
+
+            </thead>
+
+  
         <div id="list" >{list.map((item) => {
             return(
+                
+
+              
                 <tr key={item._id} >
+                     
                     <td >{item.contact_number}</td>
                     <td>{item.contact_name}</td>
                     <td>{item.contact_email}</td>

@@ -47,24 +47,31 @@
     margin: auto;
 }
 
-  
+  #form {
+    margin:auto;
+    width: 15%;
+    padding: 20px;
+    /* border: solid 1px #282c34; */
+  }
 
-button {
-  border-radius: 8px;
-}
+  #save{
+   background-color: #61dafb;
+   width: 12%;
+  }
 
-#form {
-  display:flex;
-  /* background-color: #874356a6; */
-    font-size: 50px;
-    /* border-radius: 25px;box-shadow: 0 -7px 18px rgb(0, 0, 0) */
-}
+  #cancel{
+    background-color: rgba(167, 160, 160, 0.592);
+    width: 12%;
+  }
 
-#save {
-  font-size: 28px;
-  padding-top: 5%;
-}
 
-h1 {
-  font-size: 50px;
-}
+  .input{
+    border-radius: 6px;
+  }
+
+
+  #list{
+    margin-left: 2.5em;
+      }
+
+
