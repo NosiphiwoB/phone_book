@@ -1,6 +1,8 @@
 import Navbar from "./Navbar";
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form'
+import Form from 'react-bootstrap/Form';
+
+
 
 const form = (props) => {
   const {handleChange, handleSubmit, contact_number, contact_name, contact_email} = props;
@@ -12,51 +14,71 @@ const form = (props) => {
         <h1>Add Contact</h1>        
        </div>
 
-       <form onSubmit={handleSubmit}>
-        <div id="form">
-         <div>
-          <label>Contact Number</label>
-          <input className="input"
-          placeholder="Your Number"
-           onChange={handleChange}
-           name="contact_number"
-           value={contact_number}
-          />
-         </div>
 
+       <Form onSubmit={handleSubmit} id='form' >
         <div>
-          <label>Contact Name</label>
-          <input className="input"
-          placeholder="Your Name"
-          onChange={handleChange}
+      <Form.Group className="mb-3" controlId="formBasicName">
+        <div>
+        <Form.Label className="label" id="name">First Name</Form.Label>
+        </div>
+        <div>
+        <Form.Control type="text" placeholder="Enter Your Name" onChange={handleChange}
           name="contact_name"
-          value={contact_name}
-          />
-        </div>
-
+          value={contact_name} className="input"/>
+          </div>
+      </Form.Group>
+       </div>
+       <br/>
+       <div>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
         <div>
-         <label>Contact Email</label>
-         <input className="input"
-         placeholder="Your Email"
-         onChange={handleChange}
+        <Form.Label className="label" id="email">Email </Form.Label>
+        </div>
+        <div>
+        <Form.Control type="email" placeholder="Enter Your Email" onChange={handleChange}
          name="contact_email"
-         value={contact_email}
-         />
-        </div>
-        </div>
-       <div >
-         <button type="submit" id="save">Save Details</button>
+         value={contact_email} className="input" required/>
+         </div>
+      </Form.Group>
+       </div>
+       <br/>
+        <div>
+      <Form.Group className="mb-3" controlId="formBasicNumber">
+        <div>
+        <Form.Label className="label">Phone Number</Form.Label>
         </div>
         <div>
-          <button id="cancel">cancel</button>
+        <Form.Control type="number" placeholder="0765863889" onChange={handleChange}
+           name="contact_number"
+           value={contact_number}  className="input" id="number" required/>
+           </div>
+      </Form.Group>
         </div>
 
-        
-       </form>
+<br/>
+
+<div>
+  <div>
+
+        <Button variant="flat" type="submit" className="save">
+        Save Details
+      </Button>
+  </div>
+<br/>
+  <div>
+
+      <Button variant="primary" type="submit" className="cancel">
+        Cancel
+      </Button>
+  </div>
+</div>
+
+
+    </Form>
 
 
 
-        </div>
+       </div>
         
         
     )
