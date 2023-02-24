@@ -31,7 +31,7 @@ const Main = () => {
    }else{
     try{
       const saveContacts = await axios.post(
-        "http://localhost:5000/save_contact",
+        "http://localhost:5001/save_contact",
           form,
       );
       getDetails();
@@ -51,7 +51,7 @@ const Main = () => {
   };
   const getDetails = async () => {
     await axios
-      .get("http://localhost:5000/get_contacts")
+      .get("http://localhost:5001/get_contacts")
       .then((response) => {
         const data = response.data;
         setList(data);
@@ -62,16 +62,10 @@ const Main = () => {
 
     const deleteContact = async (id) => {
       console.log('id', id)
-      let res = await axios.delete(`http://localhost:5000/delete_contact/${id}`);
+      let res = await axios.delete(`http://localhost:5001/delete_contact/${id}`);
       getDetails();
       return res.data
      }  
-
-    //  const editContact = async (e) => {
-    // //   e.preventDefault();
-    // //   let res = await axios.put(`http://localhost:5000/update_contact/${contactEdit.id}`, guestEdit);
-    // //  return res.data
-    //  }
 
   return (
 

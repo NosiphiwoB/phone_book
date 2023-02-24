@@ -38,33 +38,104 @@
 }
 
 
-#list {
-  width: 70%;
-  margin: auto;
-  padding-top: 5%;
-  padding-left: 35%;
-  width: 70%;
-    margin: auto;
+  #form {
+    padding-top: 5%;
+    margin:auto;
+     width: 50%; 
+     height: 50vh;
+    border: solid 1px #aaaeb5;
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px 5px rgba(192, 185, 185, 0.911);
+    padding-top: 1rem;
+
+  }
+
+  .save{
+   background-color: #61dafb;
+   width: 24%;
+   height: 5vh;
+  }
+
+  .cancel{
+    background-color: rgba(167, 160, 160, 0.592);
+    width: 24%;
+    height: 5vh;
+  }
+
+
+  .input{
+    border-radius: 6px;
+    height: 5vh;
+  }
+
+
+  .label{
+margin-right: 5rem;  
 }
 
+#name{
+  margin-right:7rem;
+}
+
+#email{
+  margin-right:9rem;
+}
+
+
+.table {
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin-top: 5rem;
+  /* background-color: rgba(128, 128, 128, 0.84); */
+  text-align: center;
+  justify-content: center;
+}
+
+th {
+border-bottom: solid 2px rgba(173, 171, 171, 0.888);
+}
+th,
+td {
+  width: 300px;
+  text-align: center;
+  padding: 5px;
+}
+
+
+#edit{
+width: 80px;
+height: 4vh;
+background-color: #0198f6f0;
+color: white;
+margin-right: 10px;
+border: none;
+}
+
+
+#delete{
+width: 80px;
+height: 4vh;
+background-color: red;
+color: white;
+margin-left: 10px;
+border: none;
+}
+
+.initial{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  position:relative; 
+  left:355px; 
+}
+
+#initials{
+  border: none;
+}
+
+
+
+@media only screen and  (max-width: 760px) {
   
-
-button {
-  border-radius: 8px;
-}
-
-#form {
-  display:flex;
-  /* background-color: #874356a6; */
-    font-size: 50px;
-    /* border-radius: 25px;box-shadow: 0 -7px 18px rgb(0, 0, 0) */
-}
-
-#save {
-  font-size: 28px;
-  padding-top: 5%;
-}
-
-h1 {
-  font-size: 50px;
-}
+  }
