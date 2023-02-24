@@ -11,6 +11,7 @@ const Display = (props) =>{
             <Navbar/>
 
 
+
             <Table striped bordered hover className="table">
       <thead>
         <tr>
